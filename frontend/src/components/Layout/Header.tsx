@@ -64,7 +64,7 @@ export default function Header() {
           {/* Badge */}
           <div className="hidden xl:flex items-center gap-2 bg-primary-50 px-3 py-1.5 rounded-full flex-shrink-0">
             <div className="w-2 h-2 rounded-full bg-primary-500 animate-pulse-slow" />
-            <span className="text-xs font-semibold text-primary-700">ICBF – CINDE</span>
+            <span className="text-xs font-semibold text-primary-700">ICBF · CINDE · UdeA · Nutrir</span>
           </div>
         </div>
       </div>

@@ -50,7 +50,7 @@ export default function Home() {
           >
             <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-xs font-semibold px-4 py-1.5 rounded-full mb-8">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              ICBF · CINDE · Colombia
+              ICBF · CINDE · UdeA · Fund. Nutrir
             </span>
           </motion.div>
 
@@ -393,6 +393,97 @@ export default function Home() {
             </Link>
           </div>
         </motion.div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          ENTIDADES COOPERANTES
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-gray-50 border-t border-gray-200 px-6 py-16">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-10"
+          >
+            <span className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2 block">
+              Iniciativa interinstitucional
+            </span>
+            <h2 className="text-2xl font-bold font-display text-gray-800">
+              Entidades Cooperantes
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          >
+            {[
+              {
+                sigla:  'ICBF',
+                nombre: 'Instituto Colombiano de Bienestar Familiar',
+                rol:    'Fuente de datos ENSIN y Guías GABA',
+                color:  '#0284c7',
+                bg:     '#e0f2fe',
+                emoji:  '🏛️',
+              },
+              {
+                sigla:  'CINDE',
+                nombre: 'Fundación Centro Internacional de Educación y Desarrollo Humano',
+                rol:    'Coordinación y desarrollo del observatorio',
+                color:  '#15803d',
+                bg:     '#dcfce7',
+                emoji:  '🌱',
+              },
+              {
+                sigla:  'UdeA',
+                nombre: 'Universidad de Antioquia',
+                rol:    'Soporte académico e investigativo',
+                color:  '#7c3aed',
+                bg:     '#ede9fe',
+                emoji:  '🎓',
+              },
+              {
+                sigla:  'Fund. Nutrir',
+                nombre: 'Fundación Nutrir',
+                rol:    'Experiencia en seguridad alimentaria regional',
+                color:  '#b45309',
+                bg:     '#fef3c7',
+                emoji:  '🥗',
+              },
+            ].map(e => (
+              <motion.div
+                key={e.sigla}
+                variants={fadeUp}
+                className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 flex flex-col gap-3"
+              >
+                <div className="flex items-center gap-3">
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
+                    style={{ backgroundColor: e.bg }}
+                  >
+                    {e.emoji}
+                  </div>
+                  <span className="text-sm font-extrabold tracking-wide" style={{ color: e.color }}>
+                    {e.sigla}
+                  </span>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-800 leading-snug">{e.nombre}</p>
+                  <p className="text-xs text-gray-500 mt-1.5 leading-relaxed">{e.rol}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <p className="text-center text-xs text-gray-400 mt-8">
+            Observatorio al Derecho a la Alimentación · Colombia · Datos ENSIN 2015
+          </p>
+        </div>
       </section>
 
     </div>
