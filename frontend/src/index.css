@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #f8fafc;
+  }
+  #root { min-height: 100vh; }
+}
+
+@layer components {
+  .leaflet-container { font-family: 'Inter', sans-serif; }
+
+  /* Popup personalizado del mapa */
+  .leaflet-popup-content-wrapper {
+    @apply rounded-2xl shadow-2xl border-0 p-0 overflow-hidden;
+  }
+  .leaflet-popup-content { margin: 0; width: auto !important; }
+  .leaflet-popup-tip { @apply bg-white; }
+
+  /* Tarjetas de alimentos */
+  .food-card {
+    @apply bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300
+           border border-gray-100 overflow-hidden cursor-pointer;
+  }
+  .food-card:hover { transform: translateY(-4px); }
+
+  /* Badge de categoría */
+  .category-badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  /* Gradiente verde-tierra */
+  .bg-food-gradient {
+    background: linear-gradient(135deg, #166534 0%, #15803d 40%, #ca8a04 100%);
+  }
+
+  /* Scrollbar personalizado */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .animate-float { animation: float 3s ease-in-out infinite; }
+
+  /* Hide scrollbar but keep scroll functionality (for horizontal pill rows) */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Animación de marcadores del mapa */
+@keyframes markerPulse {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.3); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.marker-pulse { animation: markerPulse 2s ease-in-out infinite; }

@@ -1,0 +1,11 @@
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+sqlmodel==0.0.22
+pydantic==2.10.3
+python-multipart==0.0.20
+httpx==0.28.1
+
+# Mensajería (habilitar cuando se integre)
+# twilio==9.0.5           # WhatsApp via Twilio Business API
+# python-telegram-bot==21.9  # Telegram Bot API
+# aiohttp==3.10.11        # HTTP async para webhooks
