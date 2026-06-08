@@ -40,7 +40,14 @@ def list_menus(
     region: Optional[str] = None,
     verified: Optional[bool] = None,
     session: Session = Depends(get_session),
+    x_admin_token: Optional[str] = Header(None),
 ):
+    # El mapa público solo puede listar menús ya verificados; ver pendientes
+    # (incluyen datos de contacto de quien los envía) requiere el token de equipo.
+    if verified is not True:
+        if not ADMIN_TOKEN or x_admin_token != ADMIN_TOKEN:
+            raise HTTPException(401, "Token de administración inválido")
+
     query = select(CommunityMenu)
     if region:
         query = query.where(CommunityMenu.region == region)
