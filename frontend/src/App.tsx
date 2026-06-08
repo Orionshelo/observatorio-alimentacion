@@ -6,6 +6,7 @@ import AlimentosPage from './pages/AlimentosPage';
 import ComunidadPage from './pages/ComunidadPage';
 import GuiasPage from './pages/GuiasPage';
 import IndicadoresPage from './pages/IndicadoresPage';
+import RevisionPage from './pages/RevisionPage';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/indicadores" element={<IndicadoresPage />} />
             <Route path="/comunidad" element={<ComunidadPage />} />
             <Route path="/guias"     element={<GuiasPage />} />
+            <Route path="/equipo/revision" element={<RevisionPage />} />
           </Routes>
         </main>
       </div>

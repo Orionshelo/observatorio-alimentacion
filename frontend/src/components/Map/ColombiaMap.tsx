@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaflet';
 import { motion, AnimatePresence } from 'framer-motion';
 import 'leaflet/dist/leaflet.css';
 import { SUBREGIONS, NUTRITION_ALERT_CONFIG } from '../../data/regions';
+import { useCommunityMenus } from '../../hooks/useCommunityMenus';
 import type { SubRegion } from '../../types';
 import RegionPanel from './RegionPanel';
 
@@ -28,7 +29,16 @@ export default function ColombiaMap() {
   const [selectedRegion, setSelectedRegion] = useState<SubRegion | null>(null);
   const [filter, setFilter]                 = useState<'all' | 'critica' | 'moderada' | 'buena'>('all');
 
-  const filtered = filter === 'all' ? SUBREGIONS : SUBREGIONS.filter(r => r.nutritionAlert === filter);
+  // Fusiona los menús comunitarios ya verificados por el equipo con los datos estáticos
+  const liveMenus = useCommunityMenus();
+  const regionsData = useMemo(
+    () => SUBREGIONS.map(r =>
+      liveMenus[r.id]?.length ? { ...r, menus: [...r.menus, ...liveMenus[r.id]] } : r
+    ),
+    [liveMenus]
+  );
+
+  const filtered = filter === 'all' ? regionsData : regionsData.filter(r => r.nutritionAlert === filter);
 
   const close = () => setSelectedRegion(null);
 
