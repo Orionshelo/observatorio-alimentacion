@@ -4,6 +4,8 @@ sqlmodel==0.0.22
 pydantic==2.10.3
 python-multipart==0.0.20
 httpx==0.28.1
+python-dotenv==1.0.1
+psycopg2-binary==2.9.10   # driver Postgres para Supabase
 
 # Mensajería (habilitar cuando se integre)
 # twilio==9.0.5           # WhatsApp via Twilio Business API
