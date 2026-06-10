@@ -16,7 +16,7 @@ const POP_EMOJI: Record<string, string> = {
 const POP_LABEL: Record<string, string> = {
   gestantes:  'Gestantes',
   lactantes:  'Lactantes',
-  ninos_6_24: 'Niños 6-24m',
+  ninos_6_24: 'Niñas y niños 6-24 m',
 };
 
 export default function AlimentosPage() {

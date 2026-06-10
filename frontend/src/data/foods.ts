@@ -507,7 +507,7 @@ export const FOOD_GUIDES: FoodGuide[] = [
 
   {
     id: 'ninos_6_24',
-    title: 'Guía para Niños 6-24 meses',
+    title: 'Guía para Niñas y Niños 6-24 meses',
     population: 'ninos_6_24',
     ageRange: '6 a 24 meses de edad',
     mealsPerDay: '6-8 m: 2-3 comidas + lactancia · 9-11 m: 3-4 comidas + lactancia · 12-24 m: 3-5 comidas + lactancia',

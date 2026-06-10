@@ -310,7 +310,7 @@ export const SOBERANIA_ALIMENTARIA_CONTEXTO = {
 };
 
 export const FUNDACION_NUTRIR_INFO = {
-  nombre: 'Fundación Nutrir',
+  nombre: 'Nutrir',
   fundacion: 1986,
   sede: 'Manizales, Villamaría y Chinchiná (Caldas) — Quibdó (Chocó)',
   url: 'https://www.nutrirong.com',
@@ -324,5 +324,5 @@ export const FUNDACION_NUTRIR_INFO = {
     'Retraso en talla (stunting)',
   ],
   nota:
-    'Fundación Nutrir no publica reportes anuales con indicadores nacionales de acceso público. Su trabajo es de alcance local (Caldas y Chocó). Los indicadores que monitorean se alinean con los estándares del ICBF pero no están disponibles en informes públicos desagregados.',
+    'Nutrir no publica reportes anuales con indicadores nacionales de acceso público. Su trabajo es de alcance local (Caldas y Chocó). Los indicadores que monitorean se alinean con los estándares del ICBF pero no están disponibles en informes públicos desagregados.',
 };

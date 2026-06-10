@@ -7,7 +7,7 @@ import type { CommunitySubmission, PopulationGroup } from '../../types';
 const POPULATION_OPTIONS: { value: PopulationGroup; label: string; emoji: string }[] = [
   { value: 'gestantes',  label: 'Mujeres gestantes',  emoji: '🤰' },
   { value: 'lactantes',  label: 'Madres lactantes',   emoji: '🤱' },
-  { value: 'ninos_6_24', label: 'Niños 6-24 meses',  emoji: '👶' },
+  { value: 'ninos_6_24', label: 'Niñas y niños 6-24 meses',  emoji: '👶' },
   { value: 'ninos_2_5',  label: 'Niños 2-5 años',    emoji: '🧒' },
   { value: 'general',    label: 'Población general',  emoji: '👥' },
 ];

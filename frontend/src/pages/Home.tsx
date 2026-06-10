@@ -50,7 +50,7 @@ export default function Home() {
           >
             <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-sm text-white/90 text-xs font-semibold px-4 py-1.5 rounded-full mb-8">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              ICBF · CINDE · UdeA · Fund. Nutrir
+              ICBF · CINDE · UdeA · Nutrir
             </span>
           </motion.div>
 
@@ -74,8 +74,8 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.18 }}
             className="text-white/75 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed"
           >
-            Mapeamos la situación nutricional de gestantes, lactantes y niños con datos
-            oficiales del ICBF — énfasis en{' '}
+            Mapeamos la situación nutricional de mujeres gestantes, lactantes y niñas y niños
+            con datos oficiales del ICBF — énfasis en{' '}
             <strong className="text-yellow-200 font-semibold">Cesar y Magdalena</strong>.
           </motion.p>
 
@@ -328,7 +328,7 @@ export default function Home() {
             {[
               { emoji: '🤰', title: 'Gestantes',    desc: 'Énfasis en folato, hierro y calcio para el desarrollo fetal', path: '/guias' },
               { emoji: '🤱', title: 'Lactantes',    desc: 'Nutrición para sostener la lactancia y recuperación materna', path: '/guias' },
-              { emoji: '👶', title: 'Niños 6–24m', desc: 'Introducción de alimentos locales y complementación',         path: '/guias' },
+              { emoji: '👶', title: 'Niñas y niños 6-24 m', desc: 'Introducción de alimentos locales y complementación',         path: '/guias' },
             ].map(g => (
               <motion.div key={g.title} variants={fadeUp}>
                 <Link to={g.path}>
@@ -448,8 +448,8 @@ export default function Home() {
                 emoji:  '🎓',
               },
               {
-                sigla:  'Fund. Nutrir',
-                nombre: 'Fundación Nutrir',
+                sigla:  'Nutrir',
+                nombre: 'Nutrir',
                 rol:    'Experiencia en seguridad alimentaria regional',
                 color:  '#b45309',
                 bg:     '#fef3c7',
@@ -483,6 +483,80 @@ export default function Home() {
           <p className="text-center text-xs text-gray-400 mt-8">
             Observatorio al Derecho a la Alimentación · Colombia · Datos ENSIN 2015
           </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          ODS — Objetivos de Desarrollo Sostenible
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="bg-white border-t border-gray-100 px-6 py-16">
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-10"
+          >
+            <span className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2 block">
+              Agenda 2030 · Naciones Unidas
+            </span>
+            <h2 className="text-2xl font-bold font-display text-gray-800">
+              Objetivos de Desarrollo Sostenible
+            </h2>
+            <p className="text-gray-500 text-sm mt-2 max-w-md mx-auto">
+              Este observatorio contribuye al cumplimiento de tres ODS prioritarios para Colombia
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-3 gap-5"
+          >
+            {[
+              {
+                num:   2,
+                title: 'Hambre Cero',
+                desc:  'Poner fin al hambre, lograr la seguridad alimentaria y mejorar la nutrición de gestantes, lactantes y la primera infancia.',
+                color: '#DDA63A',
+                emoji: '🌾',
+              },
+              {
+                num:   3,
+                title: 'Salud y Bienestar',
+                desc:  'Garantizar una vida sana y promover el bienestar, reduciendo la anemia, la desnutrición crónica y la mortalidad infantil.',
+                color: '#4C9F38',
+                emoji: '❤️',
+              },
+              {
+                num:   12,
+                title: 'Producción y Consumo Responsables',
+                desc:  'Promover patrones sostenibles de producción y consumo basados en alimentos locales de Cesar y Magdalena.',
+                color: '#BF8B2E',
+                emoji: '♻️',
+              },
+            ].map(o => (
+              <motion.div
+                key={o.num}
+                variants={fadeUp}
+                className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm flex flex-col"
+              >
+                <div className="flex items-center gap-3 p-5 text-white" style={{ backgroundColor: o.color }}>
+                  <span className="text-3xl flex-shrink-0">{o.emoji}</span>
+                  <div>
+                    <p className="text-xs font-extrabold uppercase tracking-wider opacity-90">ODS {o.num}</p>
+                    <p className="font-bold font-display leading-tight">{o.title}</p>
+                  </div>
+                </div>
+                <div className="p-5 bg-white flex-1">
+                  <p className="text-xs text-gray-500 leading-relaxed">{o.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
