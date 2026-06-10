@@ -212,7 +212,7 @@ export default function Home() {
             {[
               { val: '66.7%', label: 'Hogares en Magdalena con inseguridad alimentaria', accent: 'border-orange-400' },
               { val: '64.3%', label: 'Hogares en Cesar con inseguridad alimentaria',     accent: 'border-red-400'    },
-              { val: '44.5%', label: 'Gestantes colombianas con deficiencia de hierro',  accent: 'border-pink-400'   },
+              { val: '44.5%', label: 'Mujeres gestantes colombianas con deficiencia de hierro',  accent: 'border-pink-400'   },
             ].map(m => (
               <motion.div
                 key={m.label}
@@ -326,8 +326,8 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-3 gap-5"
           >
             {[
-              { emoji: '🤰', title: 'Gestantes',    desc: 'Énfasis en folato, hierro y calcio para el desarrollo fetal', path: '/guias' },
-              { emoji: '🤱', title: 'Lactantes',    desc: 'Nutrición para sostener la lactancia y recuperación materna', path: '/guias' },
+              { emoji: '🤰', title: 'Mujeres Gestantes', desc: 'Énfasis en folato, hierro y calcio para el desarrollo fetal', path: '/guias' },
+              { emoji: '🤱', title: 'Mujeres Lactantes', desc: 'Nutrición para sostener la lactancia y recuperación materna', path: '/guias' },
               { emoji: '👶', title: 'Niñas y niños 6-24 m', desc: 'Introducción de alimentos locales y complementación',         path: '/guias' },
             ].map(g => (
               <motion.div key={g.title} variants={fadeUp}>

@@ -10,8 +10,8 @@ interface Props {
 
 const POP_TABS: { value: PopulationGroup | 'todos'; label: string; emoji: string; color: string; bg: string }[] = [
   { value: 'todos',      label: 'Todos',       emoji: '🗺️', color: '#374151', bg: '#f3f4f6' },
-  { value: 'gestantes',  label: 'Gestantes',   emoji: '🤰', color: '#9d174d', bg: '#fce7f3' },
-  { value: 'lactantes',  label: 'Lactantes',   emoji: '🤱', color: '#1e40af', bg: '#dbeafe' },
+  { value: 'gestantes',  label: 'Mujeres Gestantes', emoji: '🤰', color: '#9d174d', bg: '#fce7f3' },
+  { value: 'lactantes',  label: 'Mujeres Lactantes', emoji: '🤱', color: '#1e40af', bg: '#dbeafe' },
   { value: 'ninos_6_24', label: 'Niñas y niños 6-24 m', emoji: '👶', color: '#065f46', bg: '#d1fae5' },
 ];
 

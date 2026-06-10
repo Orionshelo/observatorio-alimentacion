@@ -417,7 +417,7 @@ export const FOOD_CATEGORIES: Record<string, { label: string; color: string; bgC
 export const FOOD_GUIDES: FoodGuide[] = [
   {
     id: 'gestantes',
-    title: 'Guía para Gestantes',
+    title: 'Guía para Mujeres Gestantes',
     population: 'gestantes',
     ageRange: 'Mujeres en embarazo',
     mealsPerDay: '5 a 6 comidas diarias (3 principales + 2-3 meriendas)',

@@ -147,7 +147,7 @@ function SectionHeader({ emoji, title, subtitle }: { emoji: string; title: strin
 // ─── Datos resumen para el encabezado ─────────────────────────────────────────
 
 const KEY_METRICS = [
-  { label: 'Gestantes con anemia',           value: '26.2%', alerta: 'critico'  as AlertLevel, desc: 'Nacional · ENSIN 2015' },
+  { label: 'Mujeres gestantes con anemia',   value: '26.2%', alerta: 'critico'  as AlertLevel, desc: 'Nacional · ENSIN 2015' },
   { label: 'Lactancia materna exclusiva',     value: '36.1%', alerta: 'moderado' as AlertLevel, desc: '< 6 meses · Nacional' },
   { label: 'Inseguridad alimentaria hogar',   value: '54.2%', alerta: 'critico'  as AlertLevel, desc: 'Nacional · ENSIN 2015' },
   { label: 'Inseguridad alimentaria Cesar',   value: '64.3%', alerta: 'critico'  as AlertLevel, desc: 'Departamento priorizado' },
@@ -303,11 +303,11 @@ export default function IndicadoresPage() {
         </div>
       </section>
 
-      {/* ── SECCIÓN: Gestantes y Lactantes ── */}
+      {/* ── SECCIÓN: Mujeres Gestantes y Lactantes ── */}
       <section className="space-y-4">
         <SectionHeader
           emoji="🤰"
-          title="Gestantes y Lactantes"
+          title="Mujeres Gestantes y Lactantes"
           subtitle="Indicadores nutricionales — ENSIN 2015, Colombia"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
