@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { ExternalLink } from 'lucide-react';
 import { SUBREGIONS, NUTRITION_ALERT_CONFIG } from '../data/regions';
 import { FOODS, FOOD_CATEGORIES } from '../data/foods';
 
@@ -430,6 +431,7 @@ export default function Home() {
                 color:  '#0284c7',
                 bg:     '#e0f2fe',
                 emoji:  '🏛️',
+                url:    'https://www.icbf.gov.co',
               },
               {
                 sigla:  'CINDE',
@@ -438,6 +440,7 @@ export default function Home() {
                 color:  '#15803d',
                 bg:     '#dcfce7',
                 emoji:  '🌱',
+                url:    'https://www.cinde.org.co',
               },
               {
                 sigla:  'UdeA',
@@ -446,6 +449,7 @@ export default function Home() {
                 color:  '#7c3aed',
                 bg:     '#ede9fe',
                 emoji:  '🎓',
+                url:    'https://www.udea.edu.co',
               },
               {
                 sigla:  'Nutrir',
@@ -454,12 +458,17 @@ export default function Home() {
                 color:  '#b45309',
                 bg:     '#fef3c7',
                 emoji:  '🥗',
+                url:    'https://www.nutrirong.com',
               },
             ].map(e => (
-              <motion.div
+              <motion.a
                 key={e.sigla}
+                href={e.url}
+                target="_blank"
+                rel="noreferrer"
                 variants={fadeUp}
-                className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 flex flex-col gap-3"
+                whileHover={{ scale: 1.03 }}
+                className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300 transition-all p-5 flex flex-col gap-3"
               >
                 <div className="flex items-center gap-3">
                   <div
@@ -471,12 +480,13 @@ export default function Home() {
                   <span className="text-sm font-extrabold tracking-wide" style={{ color: e.color }}>
                     {e.sigla}
                   </span>
+                  <ExternalLink size={13} className="text-gray-300 ml-auto flex-shrink-0" />
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-gray-800 leading-snug">{e.nombre}</p>
                   <p className="text-xs text-gray-500 mt-1.5 leading-relaxed">{e.rol}</p>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </motion.div>
 
