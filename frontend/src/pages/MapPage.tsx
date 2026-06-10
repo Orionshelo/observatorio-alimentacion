@@ -1,6 +1,7 @@
 import ColombiaMap from '../components/Map/ColombiaMap';
 import NutritionRadar from '../components/Charts/NutritionRadar';
 import RegionBarChart from '../components/Charts/RegionBarChart';
+import PageHeader from '../components/Layout/PageHeader';
 import { SUBREGIONS } from '../data/regions';
 
 const prioritizedFoods = SUBREGIONS.filter(r => r.isPrioritized).flatMap(r => r.foods);
@@ -8,12 +9,12 @@ const prioritizedFoods = SUBREGIONS.filter(r => r.isPrioritized).flatMap(r => r.
 export default function MapPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold font-display text-gray-900">Mapa Alimentario</h1>
-        <p className="text-gray-500 mt-1">
-          Visualización georreferenciada de alimentos nutritivos por región · Énfasis en Cesar y Magdalena
-        </p>
-      </div>
+      <PageHeader
+        eyebrow="Geolocalización"
+        emoji="🗺️"
+        title="Mapa Alimentario"
+        subtitle="Visualización georreferenciada de alimentos nutritivos por región · Énfasis en Cesar y Magdalena."
+      />
 
       <ColombiaMap />
 

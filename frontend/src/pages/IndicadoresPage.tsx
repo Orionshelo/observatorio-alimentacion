@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import PageHeader from '../components/Layout/PageHeader';
 import {
   INDICADORES_GESTANTES,
   INDICADORES_INSEGURIDAD,
@@ -197,21 +198,15 @@ export default function IndicadoresPage() {
     <div className="max-w-5xl mx-auto px-4 py-6 space-y-10">
 
       {/* ── Encabezado ── */}
-      <div>
-        <div className="flex flex-wrap gap-2 mb-3">
-          <span className="text-xs font-semibold text-primary-700 bg-primary-50 border border-primary-200 px-3 py-1 rounded-full">
-            ENSIN 2015 · ICBF
-          </span>
-          <span className="text-xs font-semibold text-gray-600 bg-gray-100 border border-gray-200 px-3 py-1 rounded-full">
-            Solo datos de fuentes originales verificadas
-          </span>
-        </div>
-        <h1 className="text-3xl font-bold font-display text-gray-900">
-          Indicadores Nutricionales Oficiales
-        </h1>
-        <p className="text-gray-500 mt-1 max-w-2xl">
-          Soberanía alimentaria, mujeres gestantes y lactantes — Colombia con énfasis en Cesar y Magdalena.
-        </p>
+      <PageHeader
+        eyebrow="ENSIN 2015 · ICBF"
+        emoji="📊"
+        title="Indicadores Nutricionales Oficiales"
+        subtitle="Soberanía alimentaria, mujeres gestantes y lactantes — Colombia con énfasis en Cesar y Magdalena."
+      >
+        <span className="inline-flex items-center text-xs font-semibold text-white/80 bg-white/10 border border-white/20 px-3 py-1 rounded-full mt-3">
+          Solo datos de fuentes originales verificadas
+        </span>
 
         <div className="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800 flex gap-3">
           <span className="text-xl flex-shrink-0">⚠️</span>
@@ -228,7 +223,7 @@ export default function IndicadoresPage() {
             </p>
           </div>
         </div>
-      </div>
+      </PageHeader>
 
       {/* ── Métricas clave ── */}
       <div>

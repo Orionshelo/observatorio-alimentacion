@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FOOD_GUIDES, FOOD_CATEGORIES } from '../data/foods';
+import PageHeader from '../components/Layout/PageHeader';
 
 const POP_EMOJI: Record<string, string> = {
   gestantes:  '🤰',
@@ -15,14 +16,12 @@ export default function GuiasPage() {
   return (
     <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
 
-      {/* Page header */}
-      <div>
-        <h1 className="text-3xl font-bold font-display text-gray-900">Guías Alimentarias ICBF</h1>
-        <p className="text-gray-500 mt-1">
-          Guías Alimentarias Basadas en Alimentos (GABA) – adaptadas a las regiones de Cesar y Magdalena.
-          Fuente: Instituto Colombiano de Bienestar Familiar (ICBF).
-        </p>
-      </div>
+      <PageHeader
+        eyebrow="GABA · ICBF"
+        emoji="📖"
+        title="Guías Alimentarias ICBF"
+        subtitle="Guías Alimentarias Basadas en Alimentos (GABA) – adaptadas a las regiones de Cesar y Magdalena. Fuente: Instituto Colombiano de Bienestar Familiar (ICBF)."
+      />
 
       {/* Guide selector */}
       <div className="flex gap-3 flex-wrap">

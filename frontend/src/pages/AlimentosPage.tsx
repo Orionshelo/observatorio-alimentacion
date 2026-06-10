@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FOODS, FOOD_CATEGORIES } from '../data/foods';
 import FoodGroupChart from '../components/Charts/FoodGroupChart';
 import NutritionRadar from '../components/Charts/NutritionRadar';
+import PageHeader from '../components/Layout/PageHeader';
 import type { FoodCategory } from '../types';
 
 const ALL = 'all';
@@ -36,12 +37,12 @@ export default function AlimentosPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
 
-      <div>
-        <h1 className="text-3xl font-bold font-display text-gray-900">Alimentos Mapeados</h1>
-        <p className="text-gray-500 mt-1">
-          Catálogo de alimentos nutritivos por grupo alimentario de las guías ICBF
-        </p>
-      </div>
+      <PageHeader
+        eyebrow="Catálogo GABA"
+        emoji="🥗"
+        title="Alimentos Mapeados"
+        subtitle="Catálogo de alimentos nutritivos por grupo alimentario de las guías ICBF."
+      />
 
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

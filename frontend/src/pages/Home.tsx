@@ -66,7 +66,7 @@ export default function Home() {
             <br />
             <span className="text-emerald-300">Derecho a la</span>
             <br />
-            <span className="text-yellow-300">Alimentación</span>
+            <span className="text-harvest-300">Alimentación</span>
           </motion.h1>
 
           <motion.p
@@ -77,7 +77,7 @@ export default function Home() {
           >
             Mapeamos la situación nutricional de mujeres gestantes, lactantes y niñas y niños
             con datos oficiales del ICBF — énfasis en{' '}
-            <strong className="text-yellow-200 font-semibold">Cesar y Magdalena</strong>.
+            <strong className="text-harvest-200 font-semibold">Cesar y Magdalena</strong>.
           </motion.p>
 
           {/* Pills con datos clave */}
@@ -146,7 +146,7 @@ export default function Home() {
         >
           {[
             { value: `${prioritizedRegions.length}`, label: 'Subregiones priorizadas', color: 'text-emerald-400' },
-            { value: `${totalFoods}`,                label: 'Alimentos mapeados',       color: 'text-yellow-400' },
+            { value: `${totalFoods}`,                label: 'Alimentos mapeados',       color: 'text-harvest-400' },
             { value: `${categories}`,                label: 'Grupos alimentarios',      color: 'text-teal-400'   },
             { value: `${criticalRegions.length}`,    label: 'Zonas en alerta crítica',  color: 'text-red-400'    },
           ].map(s => (
@@ -378,7 +378,7 @@ export default function Home() {
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
-                className="bg-primary-500 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:bg-primary-400 transition-all text-sm"
+                className="bg-harvest-500 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:bg-harvest-400 transition-all text-sm"
               >
                 Contribuir al mapa
               </motion.button>

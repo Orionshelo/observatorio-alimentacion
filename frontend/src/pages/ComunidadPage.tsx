@@ -1,14 +1,15 @@
 import MenuSubmissionForm from '../components/Community/MenuSubmissionForm';
+import PageHeader from '../components/Layout/PageHeader';
 
 export default function ComunidadPage() {
   return (
     <div className="max-w-5xl mx-auto px-4 py-6 space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold font-display text-gray-900">Mapeo Comunitario</h1>
-        <p className="text-gray-500 mt-1">
-          Contribuye a identificar menús y alimentos de tu región que aún no están en el observatorio.
-        </p>
-      </div>
+      <PageHeader
+        eyebrow="Comunidad"
+        emoji="🤝"
+        title="Mapeo Comunitario"
+        subtitle="Contribuye a identificar menús y alimentos de tu región que aún no están en el observatorio."
+      />
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* Formulario */}
