@@ -91,7 +91,7 @@ export default function RegionPanel({ region, onClose }: Props) {
           </div>
           <div className="bg-white/15 rounded-lg p-2 text-center">
             <p className="text-lg font-bold">{region.menus.length}</p>
-            <p className="text-xs text-white/80">Menús</p>
+            <p className="text-xs text-white/80">Preparaciones</p>
           </div>
         </div>
       </div>
@@ -127,13 +127,13 @@ export default function RegionPanel({ region, onClose }: Props) {
         {popFilter !== 'todos' && (
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide mb-3" style={{ color: activePop.color }}>
-              {activePop.emoji} Recomendados GABA para {activePop.label}
+              {activePop.emoji} Recomendados (Guía ICBF–UdeA) para {activePop.label}
             </p>
 
             {recommendedFoods.length === 0 ? (
               <div className="bg-gray-50 rounded-xl p-4 text-center">
                 <p className="text-sm text-gray-500">
-                  Ningún alimento mapeado tiene recomendación GABA específica para {activePop.label} en {region.name}.
+                  Ningún alimento mapeado tiene recomendación específica de la Guía ICBF–UdeA para {activePop.label} en {region.name}.
                 </p>
                 <p className="text-xs text-gray-400 mt-1">Contribuye desde la sección Comunidad.</p>
               </div>
@@ -223,11 +223,11 @@ export default function RegionPanel({ region, onClose }: Props) {
           </div>
         )}
 
-        {/* Menus */}
+        {/* Preparaciones */}
         {region.menus.length > 0 && (
           <div>
             <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
-              Menús registrados
+              Alimentos y preparaciones registrados
             </p>
             <div className="space-y-2">
               {region.menus.map(menu => (
@@ -255,7 +255,7 @@ export default function RegionPanel({ region, onClose }: Props) {
 
         <div className="border-t border-gray-100 pt-3">
           <p className="text-xs text-gray-400 text-center">
-            👥 {(region.population / 1000).toFixed(0)}k hab. · Recomendaciones: GABA–ICBF
+            👥 {(region.population / 1000).toFixed(0)}k hab. · Recomendaciones: Guía ICBF–UdeA (2025)
           </p>
         </div>
       </div>

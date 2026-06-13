@@ -17,7 +17,7 @@ export const FOODS: FoodItem[] = [
     guideRecommended: [
       { population: 'gestantes',  priority: 'alta',  reason: 'Fuente de energía y carbohidratos complejos para cubrir el incremento calórico del embarazo.' },
       { population: 'lactantes',  priority: 'alta',  reason: 'Provee energía necesaria para sostener la producción de leche materna.' },
-      { population: 'ninos_6_24', priority: 'alta',  reason: 'Primer alimento sólido recomendado por GABA: puré de yuca cocinada al vapor, sin sal.' },
+      { population: 'ninos_6_24', priority: 'alta',  reason: 'Primer alimento sólido recomendado por la Guía ICBF–UdeA (2025): puré de yuca cocinada al vapor, sin sal.' },
     ],
   },
   {
@@ -47,7 +47,7 @@ export const FOODS: FoodItem[] = [
     season: ['todo el año'],
     preparation: ['horneada', 'sancochada', 'en coladas'],
     guideRecommended: [
-      { population: 'ninos_6_24', priority: 'alta',  reason: 'Alimento de inicio recomendado por GABA: su betacaroteno y textura suave la hacen ideal como primer puré.' },
+      { population: 'ninos_6_24', priority: 'alta',  reason: 'Alimento de inicio recomendado por la Guía ICBF–UdeA (2025): su betacaroteno y textura suave la hacen ideal como primer puré.' },
       { population: 'gestantes',  priority: 'media', reason: 'Betacaroteno (provitamina A) y calcio útiles durante el embarazo.' },
     ],
   },
@@ -114,7 +114,7 @@ export const FOODS: FoodItem[] = [
     guideRecommended: [
       { population: 'gestantes',  priority: 'alta',  reason: '228 mg de vitamina C por 100 g — la más alta de la región. Potencia la absorción de hierro y previene infecciones.' },
       { population: 'lactantes',  priority: 'alta',  reason: 'Vitamina C que pasa a la leche materna y protege al bebé. También aporta folato.' },
-      { population: 'ninos_6_24', priority: 'alta',  reason: 'Primera fruta recomendada por GABA: suave, dulce y riquísima en vitamina C. Servir madura y sin semillas.' },
+      { population: 'ninos_6_24', priority: 'alta',  reason: 'Primera fruta recomendada por la Guía ICBF–UdeA (2025): suave, dulce y riquísima en vitamina C. Servir madura y sin semillas.' },
     ],
   },
   {
@@ -173,7 +173,7 @@ export const FOODS: FoodItem[] = [
     nutrients: { protein: 1.2, carbs: 12, fat: 0.5, fiber: 3, iron: 0.6, calcium: 25, vitaminC: 18, folate: 10 },
     season: ['diciembre-marzo'],
     preparation: ['jugo', 'chicha', 'dulce'],
-    notes: 'Fruta nativa del Caribe colombiano. Alta carga antioxidante. No ampliamente documentada en GABA nacional.',
+    notes: 'Fruta nativa del Caribe colombiano. Alta carga antioxidante. No ampliamente documentada en la Guía ICBF–UdeA (2025).',
     guideRecommended: [
       { population: 'gestantes', priority: 'media', reason: 'Antioxidantes y vitamina C que apoyan la inmunidad durante el embarazo.' },
       { population: 'lactantes', priority: 'media', reason: 'Fruta nativa con antioxidantes; su jugo es una fuente hidratante y nutritiva tradicional.' },
@@ -191,9 +191,9 @@ export const FOODS: FoodItem[] = [
     nutrients: { protein: 1, carbs: 6.5, fat: 0.1, fiber: 0.5, iron: 0.8, calcium: 21, vitaminC: 9, folate: 16 },
     season: ['todo el año'],
     preparation: ['crema', 'sopa', 'colada para bebés'],
-    notes: 'Rica en betacaroteno (provitamina A). Altamente recomendada por GABA para niños de 6 a 24 meses.',
+    notes: 'Rica en betacaroteno (provitamina A). Altamente recomendada por la Guía ICBF–UdeA (2025) para niñas y niños de 6 a 24 meses.',
     guideRecommended: [
-      { population: 'ninos_6_24', priority: 'alta',  reason: 'GABA la menciona explícitamente como primera papilla: su betacaroteno, textura y sabor suave son ideales a los 6 meses.' },
+      { population: 'ninos_6_24', priority: 'alta',  reason: 'La Guía ICBF–UdeA (2025) la menciona explícitamente como primera papilla: su betacaroteno, textura y sabor suave son ideales a los 6 meses.' },
       { population: 'gestantes',  priority: 'alta',  reason: 'Betacaroteno → vitamina A para el desarrollo ocular y neurológico del feto.' },
       { population: 'lactantes',  priority: 'media', reason: 'Vitamina A que enriquece la leche materna; bajo en calorías y fácil digestión.' },
     ],
@@ -225,7 +225,7 @@ export const FOODS: FoodItem[] = [
     preparation: ['sancocho de guandú', 'sopa', 'en arroz'],
     notes: 'Leguminosa nativa del Caribe. Su aporte de ácido fólico (173 mcg) lo hace fundamental para gestantes.',
     guideRecommended: [
-      { population: 'gestantes',  priority: 'alta',  reason: '173 mcg de folato/100 g — GABA enfatiza el ácido fólico desde el primer trimestre para prevenir defectos del tubo neural.' },
+      { population: 'gestantes',  priority: 'alta',  reason: '173 mcg de folato/100 g — la Guía ICBF–UdeA (2025) enfatiza el ácido fólico desde el primer trimestre para prevenir defectos del tubo neural.' },
       { population: 'lactantes',  priority: 'alta',  reason: 'Proteína completa y hierro para recuperación postparto; el folato también se transfiere en la leche.' },
       { population: 'ninos_6_24', priority: 'media', reason: 'Puré de guandú cocinado: fuente proteica vegetal accesible a partir de los 8-9 meses.' },
     ],
@@ -258,7 +258,7 @@ export const FOODS: FoodItem[] = [
     preparation: ['frita', 'a la plancha', 'en caldo'],
     notes: 'Principal fuente proteica en zonas ribereñas del Magdalena y Cesar.',
     guideRecommended: [
-      { population: 'gestantes',  priority: 'alta',  reason: 'Proteína completa y ácidos grasos omega-3 para el desarrollo neurológico fetal. GABA recomienda 2 porciones de pescado/semana.' },
+      { population: 'gestantes',  priority: 'alta',  reason: 'Proteína completa y ácidos grasos omega-3 para el desarrollo neurológico fetal. La Guía ICBF–UdeA (2025) recomienda 2 porciones de pescado/semana.' },
       { population: 'lactantes',  priority: 'alta',  reason: 'Omega-3 (DHA) que enriquece la leche materna y apoya el desarrollo cerebral del lactante.' },
       { population: 'ninos_6_24', priority: 'alta',  reason: 'Introducir a los 8 meses: filete cocido y desmenuzado, sin espinas. Proteína de alta biodisponibilidad.' },
     ],
@@ -275,7 +275,7 @@ export const FOODS: FoodItem[] = [
     notes: 'Especie nativa del Río Magdalena. Alto calcio (56 mg) y omega-3.',
     guideRecommended: [
       { population: 'gestantes',  priority: 'alta',  reason: 'Calcio (56 mg) y hierro para prevenir osteopenia gestacional y anemia; omega-3 para el neurodesarrollo fetal.' },
-      { population: 'lactantes',  priority: 'alta',  reason: 'Fuente prioritaria de omega-3 y calcio para la madre lactante según GABA Caribe.' },
+      { population: 'lactantes',  priority: 'alta',  reason: 'Fuente prioritaria de omega-3 y calcio para la madre lactante, según la Guía ICBF–UdeA (2025) para el territorio Costa y Sabana Caribe.' },
     ],
   },
   {
@@ -303,9 +303,9 @@ export const FOODS: FoodItem[] = [
     nutrients: { protein: 12.6, carbs: 0.7, fat: 10, fiber: 0, iron: 1.2, calcium: 50, vitaminC: 0, folate: 47 },
     season: ['todo el año'],
     preparation: ['cocinado', 'revuelto', 'en sopas'],
-    notes: 'Proteína completa y accesible. GABA lo recomienda explícitamente para niños de 6-24 meses desde los 6 meses.',
+    notes: 'Proteína completa y accesible. La Guía ICBF–UdeA (2025) lo recomienda explícitamente para niñas y niños de 6-24 meses desde los 6 meses.',
     guideRecommended: [
-      { population: 'ninos_6_24', priority: 'alta',  reason: 'GABA recomienda introducir la yema a los 6 meses y el huevo entero a los 8 meses. Proteína completa, hierro y colina para el cerebro.' },
+      { population: 'ninos_6_24', priority: 'alta',  reason: 'La Guía ICBF–UdeA (2025) recomienda introducir la yema a los 6 meses y el huevo entero a los 8 meses. Proteína completa, hierro y colina para el cerebro.' },
       { population: 'gestantes',  priority: 'alta',  reason: 'Proteína de alto valor biológico, hierro y colina — esencial para el desarrollo neurológico fetal.' },
       { population: 'lactantes',  priority: 'alta',  reason: 'Fuente proteica completa y económica; colina que se transfiere en la leche materna.' },
     ],
@@ -340,7 +340,7 @@ export const FOODS: FoodItem[] = [
     preparation: ['mote de queso', 'solo', 'con arepa'],
     notes: 'Con 700 mg de calcio/100 g es la fuente más concentrada de calcio en la región Caribe. Base del mote de queso del Cesar.',
     guideRecommended: [
-      { population: 'gestantes',  priority: 'alta',  reason: '700 mg de calcio/100 g — la fuente más rica de calcio local. GABA: 3 porciones de lácteos/día en el embarazo para osificación fetal.' },
+      { population: 'gestantes',  priority: 'alta',  reason: '700 mg de calcio/100 g — la fuente más rica de calcio local. La Guía ICBF–UdeA (2025) recomienda 3 porciones de lácteos/día en el embarazo para la osificación fetal.' },
       { population: 'lactantes',  priority: 'alta',  reason: 'Calcio para compensar la pérdida ósea durante la lactancia y garantizar la calidad de la leche.' },
       { population: 'ninos_6_24', priority: 'media', reason: 'A partir de los 10 meses: pequeñas porciones de queso rallado como fuente de calcio y proteína.' },
     ],
@@ -355,7 +355,7 @@ export const FOODS: FoodItem[] = [
     season: ['todo el año'],
     preparation: ['sola', 'en mazamorra', 'con cacao'],
     guideRecommended: [
-      { population: 'gestantes',  priority: 'alta',  reason: 'Calcio y vitamina D para la mineralización ósea del feto. GABA recomienda 3 vasos/día durante el embarazo.' },
+      { population: 'gestantes',  priority: 'alta',  reason: 'Calcio y vitamina D para la mineralización ósea del feto. La Guía ICBF–UdeA (2025) recomienda 3 vasos/día durante el embarazo.' },
       { population: 'lactantes',  priority: 'alta',  reason: 'Aumenta el volumen de leche materna producida; calcio para la recuperación ósea postparto.' },
       { population: 'ninos_6_24', priority: 'media', reason: 'En preparaciones (mazamorra, coladas) a partir de los 6 meses. Como bebida, esperar hasta los 12 meses.' },
     ],
@@ -388,7 +388,7 @@ export const FOODS: FoodItem[] = [
     season: ['marzo-agosto'],
     preparation: ['solo', 'guacamole', 'en ensalada'],
     guideRecommended: [
-      { population: 'gestantes',  priority: 'alta',  reason: '81 mcg de folato y grasa monoinsaturada para el desarrollo neurológico fetal. GABA lo recomienda como fuente de grasa saludable diaria.' },
+      { population: 'gestantes',  priority: 'alta',  reason: '81 mcg de folato y grasa monoinsaturada para el desarrollo neurológico fetal. La Guía ICBF–UdeA (2025) lo recomienda como fuente de grasa saludable diaria.' },
       { population: 'lactantes',  priority: 'alta',  reason: 'Grasa saludable y folato que enriquecen la leche materna. Fácil de incorporar en preparaciones cotidianas.' },
       { population: 'ninos_6_24', priority: 'media', reason: 'A partir de 8 meses: aplastado con tenedor. Grasa saludable esencial para el desarrollo cerebral.' },
     ],
@@ -410,9 +410,10 @@ export const FOOD_CATEGORIES: Record<string, { label: string; color: string; bgC
   azucares:    { label: 'Azúcares naturales',      color: '#be185d', bgColor: '#fce7f3', emoji: '🍯' },
 };
 
-// ─── Guías GABA – ICBF ───────────────────────────────────────────────────────
-// Fuente: Guías Alimentarias Basadas en Alimentos (GABA) para Colombia – ICBF
-// Ediciones: gestantes, madres lactantes, niños 0-24 meses
+// ─── Guía de Alimentación ICBF–UdeA (2025) ────────────────────────────────────
+// Fuente: Guía de Alimentación para la Población Colombiana – basada en
+// Biodiversidad y Alimentación Real (ICBF · Universidad de Antioquia, sept. 2025)
+// Recomendaciones adaptadas para gestantes, madres lactantes y niñas/niños 6-24 meses
 
 export const FOOD_GUIDES: FoodGuide[] = [
   {
@@ -432,7 +433,7 @@ export const FOOD_GUIDES: FoodGuide[] = [
       'El hierro del tamarindo, friche de cabro y fríjol previene la anemia gestacional; consúmalo con guayaba para mejorar su absorción.',
       'El queso costeño (700 mg de calcio/100 g) y la leche protegen los huesos del bebé en formación.',
       'La vitamina C de la guayaba (228 mg/100 g) es la más alta de la región; potencia la absorción de hierro no-hem.',
-      'El pescado (mojarra, bocachico) aporta omega-3 para el cerebro del bebé. GABA recomienda al menos 2 porciones por semana.',
+      'El pescado (mojarra, bocachico) aporta omega-3 para el cerebro del bebé. La Guía ICBF–UdeA (2025) recomienda al menos 2 porciones por semana.',
       'El agua de coco hidrata y aporta electrolitos de forma natural. Meta: 2.5 litros de agua/día.',
     ],
     supplements: [
@@ -460,7 +461,7 @@ export const FOOD_GUIDES: FoodGuide[] = [
       { category: 'leguminosas', description: '½ taza de leguminosa cocinada',                     localExample: 'Sancocho de guandú o fríjoles costeños (½ pocillo)' },
       { category: 'grasas',      description: '1 cucharada de grasa saludable o ¼ de aguacate',   localExample: '2 cucharadas de leche de coco o ¼ aguacate' },
     ],
-    sourceUrl: 'https://www.icbf.gov.co/guias-alimentarias-basadas-en-alimentos-para-la-poblacion-colombiana-mayor-de-2-anos',
+    sourceUrl: 'https://www.icbf.gov.co/system/files?file=Documento%20T%C3%A9cnico%20versi%C3%B3n%20%20OAC%20WEB%20VERSI%C3%93N.pdf',
   },
 
   {
@@ -476,7 +477,7 @@ export const FOOD_GUIDES: FoodGuide[] = [
       grasas: 2, azucares: 1,
     },
     keyMessages: [
-      'La lactancia materna exclusiva los primeros 6 meses es el primer acto de soberanía alimentaria del bebé (GABA-ICBF).',
+      'La lactancia materna exclusiva los primeros 6 meses es el primer acto de soberanía alimentaria del bebé (Guía ICBF–UdeA, 2025).',
       'La madre lactante necesita entre 400-500 kcal adicionales/día: arroz de coco, yuca, plátano son fuentes locales clave.',
       'Mojarra, bocachico y lisa aportan omega-3 (DHA) que enriquece la leche y apoya el desarrollo cerebral del bebé.',
       'El queso costeño y la leche compensan la pérdida de calcio óseo durante la lactancia.',
@@ -502,7 +503,7 @@ export const FOOD_GUIDES: FoodGuide[] = [
       { category: 'pescados',    description: '1 filete mediano (80-100 g)',                          localExample: 'Mojarra frita, viuda de bocachico o arroz con lisa' },
       { category: 'lacteos',     description: '200 ml de leche o 40 g de queso',                     localExample: '1 vaso de leche o 1 porción generosa de queso costeño' },
     ],
-    sourceUrl: 'https://www.icbf.gov.co/guias-alimentarias-basadas-en-alimentos-para-la-poblacion-colombiana-mayor-de-2-anos',
+    sourceUrl: 'https://www.icbf.gov.co/system/files?file=Documento%20T%C3%A9cnico%20versi%C3%B3n%20%20OAC%20WEB%20VERSI%C3%93N.pdf',
   },
 
   {
@@ -547,6 +548,6 @@ export const FOOD_GUIDES: FoodGuide[] = [
       { category: 'pescados',    description: '8 m en adelante: 1-2 cucharadas de pescado desmenuzado',             localExample: 'Mojarra o bocachico cocinado, sin espinas, en puré o sopa' },
       { category: 'lacteos',     description: 'En preparaciones; leche como bebida solo desde 12 m',                localExample: 'Colada de auyama con leche o mazamorra de maíz con leche' },
     ],
-    sourceUrl: 'https://www.icbf.gov.co/guias-alimentarias-basadas-en-alimentos-para-la-poblacion-colombiana-mayor-de-2-anos',
+    sourceUrl: 'https://www.icbf.gov.co/system/files?file=Documento%20T%C3%A9cnico%20versi%C3%B3n%20%20OAC%20WEB%20VERSI%C3%93N.pdf',
   },
 ];

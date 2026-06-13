@@ -300,7 +300,7 @@ export const SOBERANIA_ALIMENTARIA_CONTEXTO = {
   definicion:
     'En el marco normativo colombiano, la soberanía alimentaria es el derecho de los pueblos a definir sus propias políticas y estrategias sustentables de producción, distribución y consumo de alimentos (Art. 65, Constitución Política; Ley 101 de 1993). El ICBF la operacionaliza a través del Derecho Humano a la Alimentación Adecuada (DHAA) y la mide principalmente con la Escala Latinoamericana y Caribeña de Seguridad Alimentaria (ELCSA).',
   lactancia:
-    'Las Guías Alimentarias Basadas en Alimentos (GABA) del ICBF definen la lactancia materna como "el primer acto de soberanía alimentaria" de un recién nacido. Garantizar la lactancia materna exclusiva durante los primeros 6 meses y complementaria hasta los 2 años es una de las estrategias centrales del Plan Decenal de Lactancia Materna y Alimentación Complementaria 2021–2030.',
+    'La Guía de Alimentación para la Población Colombiana – basada en Biodiversidad y Alimentación Real (ICBF–UdeA, 2025) define la lactancia materna como "el primer acto de soberanía alimentaria" de un recién nacido. Garantizar la lactancia materna exclusiva durante los primeros 6 meses y complementaria hasta los 2 años es una de las estrategias centrales del Plan Decenal de Lactancia Materna y Alimentación Complementaria 2021–2030.',
   planDecenal:
     'El Plan Decenal de Lactancia Materna y Alimentación Complementaria 2021–2030 (PDLMAC), publicado por el ICBF, establece como punto de partida el 36% de lactancia materna exclusiva en 2021 y fija como meta alcanzar el 50% en 2030, en línea con los Objetivos de Desarrollo Sostenible.',
   fuentePlanDecenal:
@@ -325,4 +325,78 @@ export const FUNDACION_NUTRIR_INFO = {
   ],
   nota:
     'Nutrir no publica reportes anuales con indicadores nacionales de acceso público. Su trabajo es de alcance local (Caldas y Chocó). Los indicadores que monitorean se alinean con los estándares del ICBF pero no están disponibles en informes públicos desagregados.',
+};
+
+// ─── CONTEXTO SOCIOECONÓMICO DEPARTAMENTAL (DANE) ─────────────────────────────
+// Fuentes: DANE - Producto Interno Bruto por Departamento (PIBDEP, 2023 provisional)
+//          DANE - Pobreza Monetaria Departamental (GEIH 2022-2023)
+//          DANE - Proyecciones y retroproyecciones de población 2018-2070
+
+export const FUENTE_DANE_PIB = {
+  fuente: 'DANE — Producto Interno Bruto por Departamento (PIBDEP), 2023 provisional',
+  url: 'https://www.dane.gov.co/files/operaciones/PIB/bol-PIBDep-2023p.pdf',
+};
+
+export const FUENTE_DANE_POBREZA = {
+  fuente: 'DANE — Pobreza Monetaria Departamental, GEIH 2022-2023',
+  url: 'https://www.dane.gov.co/files/operaciones/PM/pres-PM-Departamental-2023.pdf',
+};
+
+export const FUENTE_DANE_POBLACION = {
+  fuente: 'DANE — Proyecciones y retroproyecciones de población 2018-2070 (base CNPV 2018)',
+  url: 'https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion',
+};
+
+export interface DeptSocioeconomico {
+  departamento: string;
+  poblacion: number;            // habitantes, proyección DANE
+  poblacionAnio: number;
+  pibDepartamental: number;     // miles de millones COP, precios corrientes
+  pibAnio: number;
+  pibPerCapita: number;         // COP/año — estimado: PIB departamental ÷ población
+  pobrezaMonetaria: number;      // % personas en pobreza monetaria
+  pobrezaMonetariaAnterior: number; // % año anterior, para mostrar tendencia
+  pobrezaAnio: number;
+}
+
+export const DEPT_SOCIOECONOMICOS: DeptSocioeconomico[] = [
+  {
+    departamento: 'Cesar',
+    poblacion: 1414859,
+    poblacionAnio: 2025,
+    pibDepartamental: 42277,
+    pibAnio: 2023,
+    pibPerCapita: 29880000,
+    pobrezaMonetaria: 54.4,
+    pobrezaMonetariaAnterior: 51.9,
+    pobrezaAnio: 2023,
+  },
+  {
+    departamento: 'Magdalena',
+    poblacion: 1529038,
+    poblacionAnio: 2025,
+    pibDepartamental: 21914,
+    pibAnio: 2023,
+    pibPerCapita: 14330000,
+    pobrezaMonetaria: 50.3,
+    pobrezaMonetariaAnterior: 53.9,
+    pobrezaAnio: 2023,
+  },
+];
+
+export const NACIONAL_SOCIOECONOMICO = {
+  poblacion: 52700000,
+  poblacionAnio: 2025,
+  pibTotal: 1584562,        // miles de millones COP, 2023p
+  pibAnio: 2023,
+  pibPerCapita: 30300000,    // COP/año, cifra oficial DANE PIBDEP 2023p
+  pobrezaMonetaria: 34.6,
+  pobrezaMonetariaAnterior: 36.6,
+  pobrezaAnio: 2023,
+};
+
+export const LINEA_POBREZA_HOGAR4 = {
+  valorMensual: 1741500,         // COP/mes, hogar de 4 personas, línea de pobreza monetaria
+  valorMensualExtrema: 875384,   // COP/mes, hogar de 4 personas, línea de pobreza extrema
+  anio: 2023,
 };

@@ -84,7 +84,7 @@ export default function RevisionPage() {
             <Lock size={20} className="text-primary-600" />
           </div>
           <h1 className="text-xl font-bold font-display text-gray-900 mb-1">Revisión del equipo</h1>
-          <p className="text-sm text-gray-500 mb-6">Ingresa la contraseña del equipo para revisar los menús pendientes.</p>
+          <p className="text-sm text-gray-500 mb-6">Ingresa la contraseña del equipo para revisar las preparaciones pendientes.</p>
           <input
             type="password"
             required
@@ -106,12 +106,12 @@ export default function RevisionPage() {
     );
   }
 
-  // ─── Vista: lista de menús pendientes ───────────────────────────────────────
+  // ─── Vista: lista de preparaciones pendientes ─────────────────────────────────
   return (
     <div className="max-w-3xl mx-auto px-6 py-12">
-      <h1 className="text-2xl font-bold font-display text-gray-900 mb-1">Menús pendientes de revisión</h1>
+      <h1 className="text-2xl font-bold font-display text-gray-900 mb-1">Preparaciones pendientes de revisión</h1>
       <p className="text-sm text-gray-500 mb-8">
-        Aprueba para publicar el menú en el mapa, o recházalo si no aplica.
+        Aprueba para publicar la preparación en el mapa, o recházala si no aplica.
       </p>
 
       {error && <p className="text-sm text-red-500 mb-4">{error}</p>}
@@ -124,7 +124,7 @@ export default function RevisionPage() {
 
       {menus?.length === 0 && (
         <div className="bg-white rounded-2xl border border-gray-100 p-10 text-center text-gray-400">
-          🎉 No hay menús pendientes. ¡Todo al día!
+          🎉 No hay preparaciones pendientes. ¡Todo al día!
         </div>
       )}
 

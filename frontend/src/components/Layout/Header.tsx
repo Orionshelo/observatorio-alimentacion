@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { path: '/alimentos',   label: 'Alimentos',   Icon: Leaf      },
   { path: '/indicadores', label: 'Indicadores', Icon: BarChart2 },
   { path: '/comunidad',   label: 'Comunidad',   Icon: Users     },
-  { path: '/guias',       label: 'Guías ICBF',  Icon: BookOpen  },
+  { path: '/guias',       label: 'Guía ICBF',   Icon: BookOpen  },
 ];
 
 export default function Header() {

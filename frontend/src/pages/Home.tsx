@@ -292,7 +292,7 @@ export default function Home() {
                         )}
                       </div>
                       <div className="flex items-center justify-between text-xs text-gray-400 border-t border-gray-50 pt-3">
-                        <span>🍽️ {region.menus.length} menús</span>
+                        <span>🍽️ {region.menus.length} preparaciones</span>
                         <span>👥 {(region.population / 1000).toFixed(0)}k hab.</span>
                       </div>
                     </div>
@@ -311,9 +311,9 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest text-teal-300 mb-3 block">
-              Guías Alimentarias Basadas en Alimentos
+              Guía de Alimentación para la Población Colombiana
             </span>
-            <h2 className="text-3xl font-bold font-display mb-3">GABA — ICBF</h2>
+            <h2 className="text-3xl font-bold font-display mb-3">Guía ICBF–UdeA (2025)</h2>
             <p className="text-white/60 max-w-sm mx-auto text-sm leading-relaxed">
               Recomendaciones nutricionales oficiales para las poblaciones más vulnerables.
             </p>
@@ -366,10 +366,10 @@ export default function Home() {
             Mapeo comunitario
           </span>
           <h2 className="text-3xl md:text-4xl font-bold font-display text-white mb-4 text-balance">
-            ¿Conoces alimentos o menús de tu región?
+            ¿Conoces alimentos o preparaciones de tu región?
           </h2>
           <p className="text-gray-500 max-w-lg mx-auto mb-10 leading-relaxed">
-            La comunidad puede mapear menús alimenticios que aún no están identificados.
+            La comunidad puede mapear alimentos y preparaciones que aún no están identificados.
             Próximamente también por{' '}
             <strong className="text-gray-300">WhatsApp y Telegram</strong>.
           </p>
@@ -427,7 +427,7 @@ export default function Home() {
               {
                 sigla:  'ICBF',
                 nombre: 'Instituto Colombiano de Bienestar Familiar',
-                rol:    'Fuente de datos ENSIN y Guías GABA',
+                rol:    'Fuente de datos ENSIN y Guía de Alimentación ICBF–UdeA',
                 color:  '#0284c7',
                 bg:     '#e0f2fe',
                 emoji:  '🏛️',

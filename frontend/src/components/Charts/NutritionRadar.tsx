@@ -8,6 +8,7 @@ import type { FoodItem } from '../../types';
 interface Props {
   foods: FoodItem[];
   title?: string;
+  description?: string;
 }
 
 function normalize(value: number, max: number) {
@@ -23,7 +24,7 @@ const NUTRIENT_MAX = {
   fiber:    10,
 };
 
-export default function NutritionRadar({ foods, title = 'Perfil Nutricional Regional' }: Props) {
+export default function NutritionRadar({ foods, title = 'Perfil Nutricional Regional', description }: Props) {
   if (!foods.length) return null;
 
   const avg = (key: keyof typeof NUTRIENT_MAX) =>
@@ -45,7 +46,10 @@ export default function NutritionRadar({ foods, title = 'Perfil Nutricional Regi
       className="bg-white rounded-2xl p-6 shadow-md border border-gray-100"
     >
       <h3 className="text-lg font-bold font-display text-gray-900 mb-1">{title}</h3>
-      <p className="text-sm text-gray-500 mb-4">Promedio de nutrientes en los alimentos mapeados (% del máximo)</p>
+      <p className="text-sm text-gray-500 mb-2">Promedio de nutrientes en los alimentos mapeados (% del máximo)</p>
+      {description && (
+        <p className="text-sm text-gray-600 leading-relaxed mb-4">{description}</p>
+      )}
 
       <ResponsiveContainer width="100%" height={280}>
         <RadarChart data={data}>

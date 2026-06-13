@@ -184,7 +184,7 @@ export default function ColombiaMap() {
                           <span key={f.id} title={f.name} className="text-lg">{f.emoji}</span>
                         ))}
                       </div>
-                      <p className="text-xs text-gray-500">{region.menus.length} menús registrados</p>
+                      <p className="text-xs text-gray-500">{region.menus.length} preparaciones registradas</p>
                     </div>
                   </Popup>
                 </CircleMarker>

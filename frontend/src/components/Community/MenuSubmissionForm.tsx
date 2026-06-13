@@ -83,13 +83,13 @@ export default function MenuSubmissionForm() {
           ¡Gracias por tu contribución!
         </h2>
         <p className="text-gray-500 mb-6">
-          Tu menú ha sido registrado y será revisado por nuestro equipo antes de aparecer en el mapa.
+          Tu preparación ha sido registrada y será revisada por nuestro equipo antes de aparecer en el mapa.
         </p>
         <button
           onClick={() => { setForm(INITIAL); setSubmitted(false); }}
           className="bg-primary-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-primary-700 transition-colors"
         >
-          Registrar otro menú
+          Registrar otra preparación
         </button>
       </motion.div>
     );
@@ -103,7 +103,7 @@ export default function MenuSubmissionForm() {
     >
       {/* Header */}
       <div className="bg-food-gradient p-6 text-white">
-        <h2 className="text-xl font-bold font-display">Registrar Menú Alimenticio</h2>
+        <h2 className="text-xl font-bold font-display">Registrar Alimento o Preparación</h2>
         <p className="text-white/80 text-sm mt-1">
           Ayúdanos a mapear los alimentos de tu región que aún no están en el observatorio.
         </p>
@@ -111,10 +111,10 @@ export default function MenuSubmissionForm() {
 
       <form onSubmit={handleSubmit} className="p-6 space-y-5">
 
-        {/* Nombre del menú */}
+        {/* Nombre del alimento o preparación */}
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-1.5">
-            Nombre del menú o preparación *
+            Nombre del alimento o preparación *
           </label>
           <input
             required
@@ -200,7 +200,7 @@ export default function MenuSubmissionForm() {
         {/* Selección de alimentos */}
         <div>
           <label className="block text-sm font-semibold text-gray-700 mb-1.5">
-            Alimentos que contiene este menú
+            Alimentos que contiene esta preparación
           </label>
           <input
             value={foodSearch}
@@ -280,7 +280,7 @@ export default function MenuSubmissionForm() {
           type="submit"
           className="w-full bg-primary-600 text-white font-semibold py-3.5 rounded-xl hover:bg-primary-700 transition-colors shadow-md"
         >
-          Enviar menú al mapa 🗺️
+          Enviar preparación al mapa 🗺️
         </button>
       </form>
     </motion.div>

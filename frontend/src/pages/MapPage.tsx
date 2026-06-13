@@ -23,6 +23,7 @@ export default function MapPage() {
         <NutritionRadar
           foods={prioritizedFoods}
           title="Perfil Nutricional – Cesar y Magdalena"
+          description="Este radar agrupa los alimentos priorizados en las seis subregiones de Cesar y Magdalena y promedia su aporte de seis nutrientes clave. Sirve para detectar de un vistazo las fortalezas nutricionales del territorio (ejes que llegan al borde exterior) y los vacíos que requieren mayor atención (ejes más cortos), información que orienta las recomendaciones de la Guía ICBF–UdeA para gestantes, madres lactantes y niñas y niños de 6 a 24 meses en la región."
         />
       </div>
     </div>

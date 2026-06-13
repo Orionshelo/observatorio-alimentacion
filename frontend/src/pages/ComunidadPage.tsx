@@ -8,7 +8,7 @@ export default function ComunidadPage() {
         eyebrow="Comunidad"
         emoji="🤝"
         title="Mapeo Comunitario"
-        subtitle="Contribuye a identificar menús y alimentos de tu región que aún no están en el observatorio."
+        subtitle="Contribuye a identificar alimentos y preparaciones de tu región que aún no están en el observatorio."
       />
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
@@ -24,10 +24,10 @@ export default function ComunidadPage() {
             <h3 className="font-bold text-gray-900 font-display mb-3">¿Cómo funciona?</h3>
             <div className="space-y-3">
               {[
-                { n: '1', title: 'Describe el menú',  desc: 'Ingresa el nombre, descripción y alimentos que lo componen.', emoji: '✍️' },
-                { n: '2', title: 'Selecciona tu zona', desc: 'Indica en qué región o subregión se consume este menú.',      emoji: '📍' },
+                { n: '1', title: 'Describe el alimento o preparación', desc: 'Ingresa el nombre, descripción y alimentos que lo componen.', emoji: '✍️' },
+                { n: '2', title: 'Selecciona tu zona', desc: 'Indica en qué región o subregión se consume esta preparación.', emoji: '📍' },
                 { n: '3', title: 'Revisión del equipo', desc: 'Nuestro equipo valida y lo integra al mapa.',               emoji: '✅' },
-                { n: '4', title: 'Aparece en el mapa', desc: 'El menú queda disponible para toda la comunidad.',           emoji: '🗺️' },
+                { n: '4', title: 'Aparece en el mapa', desc: 'La preparación queda disponible para toda la comunidad.',    emoji: '🗺️' },
               ].map(step => (
                 <div key={step.n} className="flex items-start gap-3">
                   <div className="w-6 h-6 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">

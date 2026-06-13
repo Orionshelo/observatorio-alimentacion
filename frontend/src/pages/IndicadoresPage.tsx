@@ -6,6 +6,12 @@ import {
   INDICADORES_INSEGURIDAD,
   INDICADORES_NINEZ,
   SOBERANIA_ALIMENTARIA_CONTEXTO,
+  DEPT_SOCIOECONOMICOS,
+  NACIONAL_SOCIOECONOMICO,
+  LINEA_POBREZA_HOGAR4,
+  FUENTE_DANE_PIB,
+  FUENTE_DANE_POBREZA,
+  FUENTE_DANE_POBLACION,
 } from '../data/indicators';
 import type { Indicador, AlertLevel, Tendencia } from '../data/indicators';
 
@@ -132,6 +138,15 @@ function IndicadorCard({ ind, index }: { ind: Indicador; index: number }) {
     </motion.div>
   );
 }
+
+// ─── Formato de cifras socioeconómicas ────────────────────────────────────────
+
+const fmtHabitantes = (n: number) => `${n.toLocaleString('es-CO')} hab.`;
+const fmtBillones = (milesDeMillones: number) =>
+  `$${(milesDeMillones / 1000).toLocaleString('es-CO', { maximumFractionDigits: 1 })} billones`;
+const fmtMillonesCOP = (cop: number) =>
+  `$${(cop / 1_000_000).toLocaleString('es-CO', { maximumFractionDigits: 1 })} millones`;
+const fmtCOP = (cop: number) => `$${cop.toLocaleString('es-CO')}`;
 
 function SectionHeader({ emoji, title, subtitle }: { emoji: string; title: string; subtitle: string }) {
   return (
@@ -312,6 +327,88 @@ export default function IndicadoresPage() {
         </div>
       </section>
 
+      {/* ── SECCIÓN: Contexto Socioeconómico ── */}
+      <section className="space-y-4">
+        <SectionHeader
+          emoji="🏦"
+          title="Contexto Socioeconómico"
+          subtitle="Población, PIB departamental e ingresos de los hogares — DANE, con énfasis en Cesar y Magdalena"
+        />
+
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 overflow-x-auto">
+          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">
+            Comparación departamental
+          </p>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="text-left text-xs text-gray-400 uppercase tracking-wide border-b border-gray-100">
+                <th className="pb-2 font-semibold pr-3">Indicador</th>
+                {DEPT_SOCIOECONOMICOS.map(d => (
+                  <th key={d.departamento} className="pb-2 font-semibold text-primary-700 pr-3">★ {d.departamento}</th>
+                ))}
+                <th className="pb-2 font-semibold">Nacional</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-50">
+              <tr>
+                <td className="py-3 text-gray-600 pr-3">Población total ({DEPT_SOCIOECONOMICOS[0].poblacionAnio})</td>
+                {DEPT_SOCIOECONOMICOS.map(d => (
+                  <td key={d.departamento} className="py-3 font-bold text-gray-900 pr-3">{fmtHabitantes(d.poblacion)}</td>
+                ))}
+                <td className="py-3 text-gray-500">{fmtHabitantes(NACIONAL_SOCIOECONOMICO.poblacion)}</td>
+              </tr>
+              <tr>
+                <td className="py-3 text-gray-600 pr-3">PIB departamental ({DEPT_SOCIOECONOMICOS[0].pibAnio}p, precios corrientes)</td>
+                {DEPT_SOCIOECONOMICOS.map(d => (
+                  <td key={d.departamento} className="py-3 font-bold text-gray-900 pr-3">{fmtBillones(d.pibDepartamental)}</td>
+                ))}
+                <td className="py-3 text-gray-500">{fmtBillones(NACIONAL_SOCIOECONOMICO.pibTotal)}</td>
+              </tr>
+              <tr>
+                <td className="py-3 text-gray-600 pr-3">PIB per cápita / año (estimado)</td>
+                {DEPT_SOCIOECONOMICOS.map(d => (
+                  <td key={d.departamento} className="py-3 font-bold text-gray-900 pr-3">{fmtMillonesCOP(d.pibPerCapita)}</td>
+                ))}
+                <td className="py-3 text-gray-500">{fmtMillonesCOP(NACIONAL_SOCIOECONOMICO.pibPerCapita)}</td>
+              </tr>
+              <tr>
+                <td className="py-3 text-gray-600 pr-3">Personas en pobreza monetaria ({DEPT_SOCIOECONOMICOS[0].pobrezaAnio})</td>
+                {DEPT_SOCIOECONOMICOS.map(d => (
+                  <td key={d.departamento} className="py-3 font-bold text-red-600 pr-3">
+                    {d.pobrezaMonetaria}%
+                    <span className="text-xs font-normal text-gray-400 ml-1">
+                      ({d.pobrezaMonetaria > d.pobrezaMonetariaAnterior ? '↑' : '↓'} vs {d.pobrezaMonetariaAnterior}% en {d.pobrezaAnio - 1})
+                    </span>
+                  </td>
+                ))}
+                <td className="py-3 text-gray-500">{NACIONAL_SOCIOECONOMICO.pobrezaMonetaria}%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p className="text-xs text-gray-400 mt-4 border-t border-gray-100 pt-3">
+            ★ Departamentos priorizados del Observatorio · Población: {FUENTE_DANE_POBLACION.fuente} · PIB y PIB per cápita
+            (estimado dividiendo el PIB departamental entre la población): {FUENTE_DANE_PIB.fuente} · Pobreza monetaria: {FUENTE_DANE_POBREZA.fuente}
+          </p>
+        </div>
+
+        <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5">
+          <div className="flex items-start gap-3">
+            <span className="text-2xl">👨‍👩‍👧‍👦</span>
+            <div>
+              <p className="font-semibold text-amber-900 text-sm">¿Cuánto necesita ganar una familia para no ser pobre?</p>
+              <p className="text-sm text-amber-800 mt-1 leading-relaxed">
+                Según el DANE, en {LINEA_POBREZA_HOGAR4.anio} un hogar de 4 personas necesitaba un ingreso mensual de al
+                menos {fmtCOP(LINEA_POBREZA_HOGAR4.valorMensual)} para no ser clasificado como pobre por ingresos (línea de
+                pobreza monetaria), y de {fmtCOP(LINEA_POBREZA_HOGAR4.valorMensualExtrema)} para no estar en pobreza
+                extrema. En el Cesar, el {DEPT_SOCIOECONOMICOS[0].pobrezaMonetaria}% de la población vive con ingresos por
+                debajo de esa línea; en Magdalena, el {DEPT_SOCIOECONOMICOS[1].pobrezaMonetaria}% — ambos por encima del
+                promedio nacional ({NACIONAL_SOCIOECONOMICO.pobrezaMonetaria}%).
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── SECCIÓN: Inseguridad Alimentaria ── */}
       <section className="space-y-4">
         <SectionHeader
@@ -378,10 +475,17 @@ export default function IndicadoresPage() {
             },
             {
               num: '3',
-              cita: 'Instituto Colombiano de Bienestar Familiar (ICBF).',
-              titulo: 'Guías Alimentarias Basadas en Alimentos (GABA) para la Población Colombiana.',
-              detalle: 'Ediciones para gestantes, lactantes y niños menores de 2 años.',
-              url: 'https://www.icbf.gov.co/guias-alimentarias-basadas-en-alimentos-para-la-poblacion-colombiana-mayor-de-2-anos',
+              cita: 'Instituto Colombiano de Bienestar Familiar (ICBF) y Universidad de Antioquia.',
+              titulo: 'Guía de Alimentación para la Población Colombiana – basada en Biodiversidad y Alimentación Real.',
+              detalle: 'Recomendaciones por territorialidad alimentaria para gestantes, madres lactantes y niñas y niños menores de 2 años. Edición septiembre 2025.',
+              url: 'https://www.icbf.gov.co/system/files?file=Documento%20T%C3%A9cnico%20versi%C3%B3n%20%20OAC%20WEB%20VERSI%C3%93N.pdf',
+            },
+            {
+              num: '4',
+              cita: 'Departamento Administrativo Nacional de Estadística (DANE).',
+              titulo: 'Producto Interno Bruto por Departamento (PIBDEP) 2023p, Pobreza Monetaria Departamental (GEIH 2022-2023) y Proyecciones de población 2018-2070.',
+              detalle: 'Indicadores socioeconómicos departamentales — población, PIB y pobreza monetaria para Cesar y Magdalena, con referencia nacional.',
+              url: FUENTE_DANE_PIB.url,
             },
           ].map(ref => (
             <div key={ref.num} className="flex gap-3 text-sm">

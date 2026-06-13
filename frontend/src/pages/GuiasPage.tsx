@@ -17,10 +17,10 @@ export default function GuiasPage() {
     <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
 
       <PageHeader
-        eyebrow="GABA · ICBF"
+        eyebrow="ICBF · UdeA · 2025"
         emoji="📖"
-        title="Guías Alimentarias ICBF"
-        subtitle="Guías Alimentarias Basadas en Alimentos (GABA) – adaptadas a las regiones de Cesar y Magdalena. Fuente: Instituto Colombiano de Bienestar Familiar (ICBF)."
+        title="Guía de Alimentación ICBF–UdeA"
+        subtitle="Guía de Alimentación para la Población Colombiana – basada en Biodiversidad y Alimentación Real, adaptada a las regiones de Cesar y Magdalena. Fuente: ICBF y Universidad de Antioquia (2025)."
       />
 
       {/* Guide selector */}
@@ -107,7 +107,7 @@ export default function GuiasPage() {
             {/* Key messages */}
             <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
               <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-4">
-                Mensajes clave GABA
+                Mensajes clave de la guía
               </p>
               <div className="space-y-3">
                 {guide.keyMessages.map((msg, i) => (
@@ -125,7 +125,7 @@ export default function GuiasPage() {
               </div>
               <div className="mt-5 pt-4 border-t border-gray-100">
                 <p className="text-xs text-gray-400 text-center">
-                  Fuente: GABA – ICBF Colombia
+                  Fuente: Guía ICBF–UdeA (2025)
                 </p>
               </div>
             </div>

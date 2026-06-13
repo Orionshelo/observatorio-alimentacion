@@ -38,16 +38,19 @@ export default function AlimentosPage() {
     <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
 
       <PageHeader
-        eyebrow="Catálogo GABA"
+        eyebrow="Guía ICBF–UdeA 2025"
         emoji="🥗"
         title="Alimentos Mapeados"
-        subtitle="Catálogo de alimentos nutritivos por grupo alimentario de las guías ICBF."
+        subtitle="Catálogo de alimentos nutritivos por grupo alimentario de la Guía de Alimentación ICBF–UdeA."
       />
 
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <FoodGroupChart />
-        <NutritionRadar foods={filtered.length ? filtered : FOODS} />
+        <NutritionRadar
+          foods={filtered.length ? filtered : FOODS}
+          description="Cada eje del radar muestra qué tan cerca está el grupo de alimentos visible de un valor de referencia para ese nutriente: cuanto más se acerca la línea verde al borde exterior, mayor es su aporte relativo de proteína, hierro, calcio, vitamina C, folato o fibra. Filtra por categoría o población para ver cómo cambia el perfil — por ejemplo, los alimentos recomendados para gestantes suelen destacar en folato y calcio, mientras que los de inicio para niñas y niños 6-24 meses priorizan hierro y vitamina C."
+        />
       </div>
 
       {/* Filtros */}
@@ -228,11 +231,11 @@ export default function AlimentosPage() {
                     ))}
                   </div>
 
-                  {/* GABA population recommendations */}
+                  {/* Guía ICBF–UdeA population recommendations */}
                   {selectedFood.guideRecommended && selectedFood.guideRecommended.length > 0 && (
                     <div className="mb-4">
                       <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                        Recomendado por GABA–ICBF para
+                        Recomendado por la Guía ICBF–UdeA para
                       </p>
                       <div className="space-y-1.5">
                         {selectedFood.guideRecommended.map(rec => (
